@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema Now — Now Playing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">CINEMA NOW</div>
+    <nav class="nav-links">
+      <a href="#grid">상영작</a>
+      <a href="#about">소개</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-visual">
+        <div class="hero-video">
+          <iframe
+            src="https://www.youtube.com/embed/LyMbgsFGQ6I?autoplay=1&mute=1&controls=0&loop=1&playlist=LyMbgsFGQ6I&playsinline=1&modestbranding=1"
+            title="Zootopia 2 Trailer"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="circle">▶</div>
+        <div class="hero-tag" id="film-count">FILMS</div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">NOW PLAYING</p>
+        <h1>극장에 걸린 영화들을 한눈에</h1>
+        <p class="lede">
+          TMDB 데이터를 활용해 최신 상영작을 큐레이션했습니다. 포스터, 제목, 개봉일을 감각적인 보드로 구성했습니다.
+        </p>
+        <div class="meta-row">
+          <span>지역: 기본 KR</span>
+          <span>페이지: 1</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-bar" id="grid">
+      <span class="category active" data-category="all">ALL</span>
+      <span class="category" data-category="drama">DRAMA</span>
+      <span class="category" data-category="action">ACTION</span>
+      <span class="category" data-category="comedy">COMEDY</span>
+      <span class="category" data-category="animation">ANIMATION</span>
+      <span class="category" data-category="sci-fi">SCI-FI</span>
+    </section>
+
+    <section class="gallery" aria-live="polite">
+      <div id="movies" class="cards"></div>
+      <div id="error" class="error hidden">영화 정보를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.</div>
+    </section>
+
+    <section class="split" id="about">
+      <div class="split-text">
+        <h2>ABOUT</h2>
+        <p>모던한 그리드와 넓은 화이트 스페이스를 사용해 콘텐츠에 집중했습니다. 매거진 같은 타이포그래피와 절제된 인터랙션으로 구성했습니다.</p>
+      </div>
+      <div class="split-image"></div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div>
+        <h2>LET’S WATCH</h2>
+        <p>보고 싶은 영화를 발견했다면 메모해두세요. 다음 업데이트에서는 관심작 즐겨찾기를 제공합니다.</p>
+      </div>
+      <a class="cta-btn" href="https://cgv.co.kr/" target="_blank" rel="noreferrer">영화 예매 바로가기</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2024 Cinema Now</div>
+    <div class="footer-links">
+      <a href="#grid">상영작</a>
+      <a href="#about">소개</a>
+      <a href="#contact">문의</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
