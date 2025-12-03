@@ -15,7 +15,6 @@ const BOOKING_MAP = {};
 
 const moviesEl = document.getElementById("movies");
 const errorEl = document.getElementById("error");
-const filmCountEl = document.getElementById("film-count");
 const categoryEls = document.querySelectorAll(".category");
 
 let allMovies = [];
@@ -34,14 +33,13 @@ async function loadMovies() {
 }
 
 function renderMovies(list) {
-  filmCountEl.textContent = `${list.length} FILMS`;
   moviesEl.innerHTML = list
     .map((movie) => {
       const poster = movie.poster_path
         ? `${IMG_BASE}${movie.poster_path}`
         : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23e9e9e9'/%3E%3Ctext x='50%25' y='50%25' fill='%23888888' font-size='20' text-anchor='middle' font-family='Arial'%3ENO IMAGE%3C/text%3E%3C/svg%3E";
       const date = movie.release_date || "미정";
-      const releaseLabel = `상영일: ${date}`;
+      const releaseLabel = `개봉일: ${date}`;
       const title = movie.title || "제목 미상";
       const key = title.toLowerCase();
       const bookingUrl = BOOKING_MAP[key] || (movie.id ? `https://www.themoviedb.org/movie/${movie.id}` : `https://www.themoviedb.org/search?query=${encodeURIComponent(title)}`);
